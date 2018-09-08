@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: "Public Health Analytics for Minority Populations in Large Datasets"
 description: This guide outlines a machine learning method for identifying minority subpopulations in larger datasets that are normally underrepresented.
+logo: /images/redplus.png
