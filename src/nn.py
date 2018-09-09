@@ -30,7 +30,7 @@ Y_test = np.concatenate((temp0, temp1), axis=1)
 
 # Network Hyper-parameters
 learning_rate = 0.00005
-epochs = 1000
+epochs = 100000
 num_examples = X.shape[0]
 
 # Placeholders for data
@@ -40,7 +40,7 @@ labels = tf.placeholder(dtype=tf.float32, shape=[None, 2])
 # Define model architecture
 dense1 = tf.layers.dense(inputs=inputs, units=20, kernel_initializer=tf.initializers.random_normal,
                          bias_initializer=tf.initializers.ones, activation=tf.nn.relu)
-dense2 = tf.layers.dense(inputs=dense1, units=20, kernel_initializer=tf.initializers.random_normal,
+dense2 = tf.layers.dense(inputs=dense1, units=10, kernel_initializer=tf.initializers.random_normal,
                          bias_initializer=tf.initializers.ones, activation=tf.nn.relu)
 dense3 = tf.layers.dense(inputs=dense2, units=2, kernel_initializer=tf.initializers.random_normal,
                          bias_initializer=tf.initializers.ones, activation=tf.nn.relu)
@@ -61,6 +61,8 @@ train = optimizer.minimize(cost)
 saver = tf.train.Saver()
 
 with tf.Session() as sess:
+    writer = tf.summary.FileWriter('/tmp/data/1')
+    writer.add_graph(sess.graph)
     print("Training...")
     sess.run(tf.global_variables_initializer())
 
@@ -71,12 +73,14 @@ with tf.Session() as sess:
         epoch_cost = 0
         epoch_acc = 0
 
+
         # Evaluate the loss, accuracy, and optimizer in that order, feeding in the neccesary values
         loss, acc, opt = sess.run([cost, accuracy, train], feed_dict={inputs: X_train, labels: Y_train})
 
         # Add the loss and accuracy for this batch
         epoch_cost += loss
         epoch_acc += acc
+
         total_cost.append(epoch_cost)
         total_accuracy.append(epoch_acc)
 
