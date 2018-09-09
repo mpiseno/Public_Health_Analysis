@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 title: "Statistical Inference on Queer Subpopulations within Datasets Collected on the General Population: Bringing Queer Stories to the Marketplace"
 description: This guide outlines a machine learning method for identifying minority subpopulations in larger datasets that are normally underrepresented, identifying the need for queer specialists in neighborhoods with relevent high insurance claims, and .
-logo: /images/redplus.png
+#logo: /images/redplus.png
 
 sections:
   - Project Background
