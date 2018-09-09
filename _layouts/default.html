@@ -13,14 +13,19 @@
   </head>
   <body>
     <div class="wrapper">
+      <h1><a href="{{ "/" | absolute_url }}">Statistical Inference on Queer Subpopulations within Datasets Collected on the General Population: Bringing Queer Stories to the Marketplace</a></h1>
+    </div>
+    <hr>
+    <div class="wrapper">
       <header>
-        <h1><a href="{{ "/" | absolute_url }}">Statistical Inference on Queer Subpopulations within Datasets Collected on the General Population: Bringing Queer Stories to the Marketplace</a></h1>
+        <h1><a href="{{ "/" | absolute_url }}">Data Science in Queer Health</a></h1>
+        <br>
 
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-
+        <br>
         {% for section in site.sections %}
           <a href="#{{ section }}">{{ section }}</a>
           <br>
@@ -49,10 +54,6 @@
            <div id="Machine Learning on Intersectional Queer Identity"><p></p></div>
       </section>
       <footer>
-        {% if site.github.is_project_page %}
-        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
