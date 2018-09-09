@@ -20,12 +20,12 @@
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-        
+        <ul>
         {% for section in site.sections %}
           <li><a href="#{{ section }}">{{ section }}</a></li>
           <br>
         {% endfor %}
-        
+        </ul>
 
         {% if site.show_downloads %}
         <ul class="downloads">
